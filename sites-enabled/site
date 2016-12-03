@@ -1,0 +1,23 @@
+upstream sinatra {
+    server sinatra:4567;
+}
+
+server {
+    listen 80 default_server;
+    listen 443 ssl default_server;
+
+    root /app;
+    index index.html;
+    server_name _;
+
+    ssl_certificate /etc/nginx/certs/server.crt;
+    ssl_certificate_key /etc/nginx/certs/server.key;
+
+    add_header Strict-Transport-Security "max-age=31536000;";
+    add_header Access-Control-Allow-Origin "*";
+
+    location / {
+        include /etc/nginx/proxy_params;
+        proxy_pass http://sinatra;
+    }
+}

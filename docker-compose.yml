@@ -1,0 +1,26 @@
+mongo:
+  image: mongo
+  expose:
+    - "27017"
+
+sinatra:
+  image: 4armed/csp-generator
+  links:
+    - mongo
+  expose:
+    - "4567"
+  environment:
+    RACK_ENV: production
+    MONGO_URL: mongo:27017
+    MONGO_DATABASE: csp
+
+frontend:
+  image: 4armed/nginx
+  volumes:
+    - ./certs:/etc/nginx/certs
+    - ./sites-enabled:/etc/nginx/sites-enabled
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - sinatra
