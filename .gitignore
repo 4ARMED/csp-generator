@@ -1,2 +1,2 @@
-certs/**
+certs/server*
 .DS_Store
