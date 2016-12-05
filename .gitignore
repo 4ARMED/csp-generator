@@ -1,2 +1,3 @@
 certs/server*
+conf.d/blockedips.conf
 .DS_Store

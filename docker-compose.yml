@@ -22,6 +22,7 @@ frontend:
   image: 4armed/nginx
   volumes:
     - ./certs:/etc/nginx/certs
+    - ./conf.d:/etc/nginx/conf.d
     - ./sites-enabled:/etc/nginx/sites-enabled
   ports:
     - "80:80"
