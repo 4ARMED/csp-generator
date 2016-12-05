@@ -7,9 +7,11 @@ This is the Docker Compose environment for 4ARMED's Content Security Policy Gene
 ## Prerequisites
 
 1. Docker Engine
+
    I know! Go figure right?! You will need Docker Engine installed and running somewhere. If you want to do this on the Interwebs then Digital Ocean's one click Docker app is a good option.
 
 2. Docker Compose
+
    If you use Digital Ocean's one click app it does not come with Docker Compose installed by default so you will need to install it:
 
    ```shell
@@ -18,6 +20,7 @@ This is the Docker Compose environment for 4ARMED's Content Security Policy Gene
    ```
 
 3. TLS Key and Certficate (optional)
+
    If you are going to send CSP reports from an HTTPS-enabled web site your browser will not allow plain HTTP connections for the report-uri. This means you will need a valid certificate. If this is going on the public Interwebs you may consider [buying one](https://www.namecheap.com/security/ssl-certificates.aspx).
 
    You should end up with a private key and a signed certificate from your chosen CA.
