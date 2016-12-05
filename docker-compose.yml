@@ -1,10 +1,14 @@
 mongo:
-  image: mongo
+  image: 4armed/mongo
   expose:
     - "27017"
+  volumes:
+    - ./db:/data/scripts
+  environment:
+    STARTUP_SCRIPT: /data/scripts/initCSP.js
 
 sinatra:
-  image: 4armed/csp-generator
+  image: 4armed/csp-backend
   links:
     - mongo
   expose:
