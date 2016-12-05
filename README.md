@@ -50,7 +50,7 @@ certs/.gitkeep
 
 (The .gitkeep came from the repo, don't be alarmed ;-))
 
-3. Start it all up
+## Run it
 
 ```shell
 docker-compose up
