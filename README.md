@@ -12,10 +12,10 @@ This is the Docker Compose environment for 4ARMED's Content Security Policy Gene
 2. Docker Compose
    If you use Digital Ocean's one click app it does not come with Docker Compose installed by default so you will need to install it:
 
-```shell
-# apt-get update
-# apt-get install docker-compose
-```
+   ```shell
+   # apt-get update
+   # apt-get install docker-compose
+   ```
 
 3. TLS Key and Certficate (optional)
    If you are going to send CSP reports from an HTTPS-enabled web site your browser will not allow plain HTTP connections for the report-uri. This means you will need a valid certificate. If this is going on the public Interwebs you may consider [buying one](https://www.namecheap.com/security/ssl-certificates.aspx).
