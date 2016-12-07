@@ -56,4 +56,12 @@ certs/.gitkeep
 docker-compose up
 ```
 
+At this point Docker Compose will download three images:
+
+* 4armed/mongo
+* 4armed/nginx
+* 4armed/csp-backend
+
+These are all public on Docker Hub and you can inspect the Dockerfiles etc so you know what they're doing.
+
 
