@@ -45,10 +45,8 @@ find certs/
 certs/
 certs/server.key
 certs/server.crt
-certs/.gitkeep
 ```
-
-(The .gitkeep came from the repo, don't be alarmed ;-))
+In the certs directory you will find a shell script generatetls.sh which you can use to generate a self-signed certificate for common name localhost. These will output to sample.key and sample.crt in the current working directory. Move these to server.key and server.crt in the certs folder.
 
 ## Run it
 
