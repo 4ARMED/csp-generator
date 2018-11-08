@@ -1,11 +1,12 @@
 mongo:
-  image: 4armed/mongo
+  image: bitnami/mongodb:latest
   expose:
     - "27017"
-  volumes:
-    - ./db:/data/scripts
   environment:
-    STARTUP_SCRIPT: /data/scripts/initCSP.js
+    MONGODB_DATABASE: csp
+    MONGODB_USERNAME: csp
+    MONGODB_PASSWORD: changethis
+    MONGODB_ROOT_PASSWORD: definitelychangethis
 
 sinatra:
   image: 4armed/csp-backend
@@ -15,8 +16,10 @@ sinatra:
     - "4567"
   environment:
     RACK_ENV: production
-    MONGO_URL: mongo:27017
-    MONGO_DATABASE: csp
+    CSP_MONGODB_DB: csp
+    CSP_MONGODB_HOST: mongo
+    CSP_MONGODB_USER: csp
+    CSP_MONGODB_PASSWORD: changethis
 
 frontend:
   image: 4armed/nginx
